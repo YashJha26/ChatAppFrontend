@@ -22,7 +22,7 @@ const Login = () => {
   } 
 
   const handleLogin = async () =>{
-    console.log("HandleLoginTriggered);
+    console.log("HandleLoginTriggered");
     setLoading('login');
     try {
       const response = await userLogin(loginData);
