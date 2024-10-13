@@ -25,6 +25,7 @@ const Login = () => {
     setLoading('login');
     try {
       const response = await userLogin(loginData);
+      console.log("HandleLoginResponse",response);
       if(response && response?.data){
         setLoggedInUser({isAuthenticated:true,user:response?.data});
         navigate('/');
