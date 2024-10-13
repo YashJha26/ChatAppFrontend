@@ -24,6 +24,7 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const authUser = async () => {
       setShowLoading(true);
+      console.log("authContext useEffect triggered");
       if (cookies && cookies?.token && typeof cookies?.token === "string") {
         console.log("cookies=", cookies);
 
