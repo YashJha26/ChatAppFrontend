@@ -13,7 +13,7 @@ export const AuthContext = createContext({
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const [cookies] = useCookies(["clientToken"]);
+  const [cookies] = useCookies(["token"]);
   //const [cookies] = useCookies([]);
   const [loggedInUser, setLoggedInUser] = useState({
     isAuthenticated: false,
@@ -28,7 +28,7 @@ const AuthContextProvider = ({ children }) => {
       console.log("authContext useEffect triggered");
       console.log("Changed cookies3=", cookies);
       console.log("Document cookies:", document.cookie);
-      if (cookies && cookies.clientToken && typeof cookies?.clientToken === "string") {
+      if (cookies && cookies?.token && typeof cookies?.token === "string") {
 
         try {
           const response = await axios.get(
