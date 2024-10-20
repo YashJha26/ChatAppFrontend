@@ -26,7 +26,7 @@ const AuthContextProvider = ({ children }) => {
       setShowLoading(true);
       console.log("authContext useEffect triggered");
       console.log("Changed cookies=", cookies);
-      if (cookies && cookies?.token && typeof cookies?.token === "string") {
+      if (cookies && cookies.clientToken && typeof cookies?.token === "string") {
 
         try {
           const response = await axios.get(
