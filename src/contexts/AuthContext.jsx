@@ -13,7 +13,7 @@ export const AuthContext = createContext({
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const [cookies] = useCookies(["token"]);
+  const [cookies] = useCookies(["clientToken"]);
   const [loggedInUser, setLoggedInUser] = useState({
     isAuthenticated: false,
     user: null,
