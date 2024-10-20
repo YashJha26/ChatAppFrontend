@@ -12,6 +12,7 @@ import { IKContext } from 'imagekitio-react';
 import ImageKitContextProvider from './contexts/ImageKitContext';
 import axios from 'axios';
 import { CssBaseline } from '@mui/material';
+import { CookiesProvider } from 'react-cookie';
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 function App() {
@@ -40,6 +41,7 @@ function App() {
 
       >
         <ImageKitContextProvider>
+          <CookiesProvider>
           <AuthContextProvider>
             <SocketContextProvider>
               <ConversationContextProvider>
@@ -53,6 +55,7 @@ function App() {
               </ConversationContextProvider>
             </SocketContextProvider>
           </AuthContextProvider>   
+          </CookiesProvider>
         </ImageKitContextProvider>
       </IKContext>
     </Router>
